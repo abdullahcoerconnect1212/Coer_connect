@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10234f">
+<title>COER Connect | Student Hub</title>
+<style>
+:root{--navy:#10234f;--blue:#315ee8;--sky:#eaf1ff;--ink:#18223b;--muted:#66718a;--line:#e5eaf3;--bg:#f6f8fc;--white:#fff;--green:#16865c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}.topbar{background:var(--navy);color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:10;box-shadow:0 3px 16px #10234f20}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}.logo{width:39px;height:39px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:13px}.brand small{display:block;font-weight:500;font-size:11px;opacity:.8;letter-spacing:0}.nav{display:flex;gap:15px;font-size:13px;align-items:center}.nav a{opacity:.9}.nav a:hover{opacity:1;text-decoration:underline}.menu-btn{display:none;background:#ffffff1b;color:white;border:1px solid #ffffff3b;border-radius:9px;padding:7px 10px}
+.wrap{width:min(1080px,100% - 30px);margin:auto}.hero{background:linear-gradient(135deg,#10234f 0%,#2449a8 65%,#4678fa 100%);color:white;padding:42px 0 35px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:270px;height:270px;border:45px solid #ffffff10;border-radius:50%;right:-80px;top:-90px}.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:28px;align-items:center;position:relative;z-index:1}.eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#cddaff}.hero h1{font-size:clamp(31px,5vw,48px);line-height:1.08;margin:10px 0 14px;max-width:620px}.hero p{color:#e4eaff;max-width:570px;margin:0 0 22px}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:11px 15px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.btn-white{background:white;color:var(--navy)}.btn-outline{background:#ffffff12;border:1px solid #ffffff65;color:white}.hero-card{background:#ffffff13;border:1px solid #ffffff2d;border-radius:20px;padding:20px;backdrop-filter:blur(5px)}.hero-card h3{margin:0 0 10px;font-size:16px}.hero-card p{font-size:13px;margin:0;color:#e7edff}.pill{display:inline-block;background:#dce7ff;color:#2347a8;font-size:11px;font-weight:800;border-radius:999px;padding:5px 9px;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-18px;position:relative;z-index:2}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:15px;text-align:center;box-shadow:0 6px 20px #10234f08}.stat strong{display:block;font-size:20px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}
+section{padding:34px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:24px;color:var(--navy)}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.search{display:flex;gap:8px;max-width:380px;width:100%}.search input{min-width:0;flex:1;border:1px solid #dce3ef;background:white;border-radius:11px;padding:11px 13px;outline:none}.search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #315ee81c}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;transition:.18s;box-shadow:0 5px 18px #10234f06}.card:hover{transform:translateY(-2px);box-shadow:0 10px 25px #10234f10}.icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:var(--sky);font-size:21px;margin-bottom:12px}.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0 0 13px;color:var(--muted);font-size:13px}.card button,.text-link{color:var(--blue);background:none;border:0;padding:0;font-size:13px;font-weight:800;cursor:pointer}
+.notice-box{display:grid;grid-template-columns:1fr 1fr;gap:15px}.notice{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}.notice h3{margin:0 0 8px}.notice p{font-size:13px;color:var(--muted);margin:0 0 13px}.notice-label{font-size:11px;font-weight:800;color:#9a5c00;background:#fff1d2;border-radius:8px;padding:5px 8px;display:inline-block;margin-bottom:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{background:#eef3ff;border-radius:15px;padding:17px}.step b{display:block;color:var(--navy);margin-bottom:5px}.step span{font-size:13px;color:var(--muted)}
+.cta{background:var(--navy);color:white;border-radius:20px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{margin:0 0 5px}.cta p{margin:0;color:#dce5ff;font-size:13px}.cta .btn{white-space:nowrap}
+footer{margin-top:30px;background:#0a1736;color:#d7def0;padding:24px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:18px;align-items:start}.foot p{margin:5px 0;max-width:670px;color:#b8c4e0}.foot a{color:white;text-decoration:underline}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,130px);background:#13244c;color:white;border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 8px 30px #0002;transition:.25s;z-index:20;max-width:calc(100% - 30px)}.toast.show{transform:translate(-50%,0)}
+.empty{display:none;color:var(--muted);padding:18px;background:white;border:1px dashed #cdd6e7;border-radius:12px}
+@media(max-width:720px){.nav{display:none;position:absolute;top:63px;left:0;right:0;background:var(--navy);padding:16px;flex-direction:column;align-items:stretch;gap:14px}.nav.open{display:flex}.menu-btn{display:block}.hero{padding:34px 0 30px}.hero-grid{grid-template-columns:1fr}.hero-card{display:none}.hero h1{font-size:35px}.stats{gap:7px}.stat{padding:12px 5px}.stat strong{font-size:18px}.stat span{font-size:10px}.section-head{align-items:stretch;flex-direction:column}.search{max-width:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:14px}.card h3{font-size:14px}.card p{font-size:12px}.notice-box,.steps{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column}.foot{flex-direction:column}}
+@media(max-width:380px){.wrap{width:calc(100% - 22px)}.grid{grid-template-columns:1fr}.hero h1{font-size:31px}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="COER Connect home"><span class="logo">CC</span><span>COER Connect<small>Student community hub</small></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰ Menu</button>
+  <nav class="nav" id="nav"><a href="#resources">Study Resources</a><a href="#notices">Notice Board</a><a href="#community">Student Corner</a><a href="#about">About</a></nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div><div class="eyebrow">Made for students, by students</div><h1>Your college life, a little more organised.</h1><p>One simple place to discover study resources, coding links, English practice and useful student tools.</p><div class="actions"><a class="btn btn-white" href="#resources">Explore Resources →</a><a class="btn btn-outline" href="#community">Student Corner</a></div></div>
+    <div class="hero-card"><span class="pill">STUDENT PROJECT</span><h3>Welcome to COER Connect 👋</h3><p>A student-made concept for organising useful links and learning resources. This demo is not an official university portal.</p></div>
+  </div>
+</section>
+<div class="wrap stats"><div class="stat"><strong>Study</strong><span>Keep learning organised</span></div><div class="stat"><strong>Build</strong><span>Grow coding skills</span></div><div class="stat"><strong>Connect</strong><span>Help fellow students</span></div></div>
+<section id="resources"><div class="wrap">
+  <div class="section-head"><div><h2>Explore student resources</h2><p>Search the cards to quickly find what you need.</p></div><div class="search"><input id="searchInput" type="search" placeholder="Search notes, coding, English..." aria-label="Search resources"></div></div>
+  <div class="grid" id="resourceGrid">
+    <article class="card" data-search="syllabus subject curriculum course outline"><div class="icon">📘</div><h3>Syllabus & Subjects</h3><p>Keep your course and subject syllabus in one place.</p><button data-msg="Add your verified course syllabus PDFs here.">Open resource →</button></article>
+    <article class="card" data-search="notes study pdf class lecture"><div class="icon">📝</div><h3>Class Notes</h3><p>Organise notes topic-wise for quick revision.</p><button data-msg="Notes section is ready for verified study files.">Browse notes →</button></article>
+    <article class="card" data-search="previous year papers pyq exam question"><div class="icon">📄</div><h3>Previous Papers</h3><p>Prepare with practice questions and past papers.</p><button data-msg="Only upload papers you are allowed to share.">View papers →</button></article>
+    <article class="card" data-search="coding programming c cpp python java web development"><div class="icon">💻</div><h3>Coding Corner</h3><p>Start with programming basics and small projects.</p><a class="text-link" href="https://www.w3schools.com/" target="_blank" rel="noopener">Learn coding →</a></article>
+    <article class="card" data-search="english spoken communication grammar speaking"><div class="icon">🗣️</div><h3>English Practice</h3><p>Build daily speaking, vocabulary and communication habits.</p><a class="text-link" href="https://learnenglish.britishcouncil.org/" target="_blank" rel="noopener">Practise English →</a></article>
+    <article class="card" data-search="career resume internship placement interview job"><div class="icon">🚀</div><h3>Career & Placements</h3><p>Learn about resumes, interview preparation and projects.</p><button data-msg="Career guides can be added here as this project grows.">Explore career tips →</button></article>
+  </div><div class="empty" id="emptyState">No matching resource found. Try another word.</div>
+</div></section>
+<section id="notices"><div class="wrap"><div class="section-head"><div><h2>Notice board</h2><p>Use this space for announcements only after checking the official source.</p></div></div>
+  <div class="notice-box"><div class="notice"><span class="notice-label">DEMO CONTENT</span><h3>Official university updates</h3><p>Timetables, exam dates and campus notices should be confirmed through COER's official channels before sharing.</p><a class="text-link" href="https://coeruniversity.ac.in/" target="_blank" rel="noopener">Visit official COER website ↗</a></div><div class="notice"><span class="notice-label">STUDENT REMINDER</span><h3>Check details before exams</h3><p>Confirm your exam room, date, syllabus and instructions with the university or faculty. This demo does not publish live notices.</p><button class="text-link" data-msg="Reminder: always verify exam details with your faculty or official portal.">Show reminder →</button></div></div>
+</div></section>
+<section id="community"><div class="wrap"><div class="section-head"><div><h2>Student corner</h2><p>Small steps to make college and career prep easier.</p></div></div>
+<div class="steps"><div class="step"><b>01 · Study smart</b><span>Break each subject into small topics and revise a little every day.</span></div><div class="step"><b>02 · Build projects</b><span>Practise coding by creating simple websites and useful mini-projects.</span></div><div class="step"><b>03 · Improve English</b><span>Speak for five minutes daily, learn useful phrases and listen carefully.</span></div></div>
+</div></section>
+<section id="about"><div class="wrap"><div class="cta"><div><h2>Have an idea for COER Connect?</h2><p>This is the first front-end version. It can grow later with verified notes, a notice admin panel and student accounts.</p></div><button class="btn btn-white" id="ideaBtn">Suggest a feature</button></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>COER Connect</strong><p>A student-made demo project. Not affiliated with, endorsed by, or operated by COER University. University name is used only to describe the intended student audience.</p></div><div><a href="https://coeruniversity.ac.in/" target="_blank" rel="noopener">Official COER website ↗</a><p>© <span id="year"></span> COER Connect · Demo version</p></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const toast=document.getElementById('toast');let toastTimer;
+function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000)}
+document.querySelectorAll('[data-msg]').forEach(btn=>btn.addEventListener('click',()=>showToast(btn.dataset.msg)));
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+document.getElementById('searchInput').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();let count=0;document.querySelectorAll('#resourceGrid .card').forEach(card=>{const visible=(card.dataset.search+' '+card.innerText).toLowerCase().includes(q);card.style.display=visible?'':'none';if(visible)count++});document.getElementById('emptyState').style.display=count?'none':'block'});
+document.getElementById('ideaBtn').addEventListener('click',()=>showToast('Feature idea: notes upload, timetable, student clubs, or exam reminders?'));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
